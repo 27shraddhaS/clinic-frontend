@@ -1,0 +1,93 @@
+<!--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>-->
+<!-- %@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<sf:form action="/patprofile" method="get" modelAttribute="uInfo">
+			<button>My Profile</button>
+		</sf:form>
+			
+		<p align="center">
+			Welcome to your profile ${pat.f_name} ${pat.l_name}!!<br>
+			Your details are as follows:<br><br>
+			
+			Your User Name: ${pat.user_name}<br><br>
+			
+			Your Email_Id: ${pat.email_id}<br><br>
+			
+			Your Contact Number: ${pat.contact_no}<br>
+			
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			
+			<a href="/home">
+				<button>Return To Home Page</button>
+			</a>
+		</p>
+	
+		
+		<form id="searchform">
+		
+			<label for="type">Enter the type of Doctor:</label><br>
+			<input type="text" id="type" name="type"><br><br>
+			<!-- A drop down list of Cardiologist, Dentist, Physician,Gynecologist, Pediatrician,Psychiatrist,Veterinarian etc   -->
+			
+			<label for="state">Enter Your State</label><br>
+			<input type="text" id="state" name="state"><br><br>
+			
+			<label for="city">Enter Your City</label><br><br>
+			<input type="text" id="city" name="city"><br><br>
+			
+			<button id="sampleForm" type="submit">SEARCH DOCTOR</button>
+		<!-- This will be handled by "user_search_results" in Doctor Controller-->
+		</form>
+		
+		<div id="searchResultList">
+			<ul class ="listgroup">
+			
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+		$(document).ready(function() {
+		    $("#searchform").submit(
+		        function(event) {
+		        	event.preventDefault();
+		        	var d = { type : $('#type').val(), state : $('#state').val(), city : $('#city').val() };
+		            
+		         $.ajax({
+		        	 	type : "POST",
+						url : "search",
+						data : d,
+						success : function(data) {
+							var result = "";
+							$("#searchResultList").html('');
+		                    $.each(data, function (id, book) {
+		                        result += '<b>state : </b>' + book.state + '<br/>' +
+		                                    '<b> city :</b>' + book.city + '<br/>' +
+		                                     '<b> fname :</b>' + book.f_name + '<br><br><br/>';
+
+		                    });
+
+							$("#searchResultList").html(result);
+							
+		                },
+		                error : function(xhr, status, error) {
+		                	alert("alerting");
+		                    alert(xhr.responseText);
+		                }
+		            });
+		        });
+		    });
+		</script>
+	</body>
+</html>

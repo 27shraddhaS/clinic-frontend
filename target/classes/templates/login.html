@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link th:href="@{/css/login.css}" rel="stylesheet">
+<script type="text/javascript" th:src="@{/js/actions.js}"></script>
+</head>
+
+<body>
+
+
+<!--div id="gap" style="height: 50px;"></div>-->
+<br>
+<h4 id="knowmore" align="center"> <a href="http://localhost:8080/about" >Know more about us</a>
+</h4>
+<br>
+<div class="wrapper">
+  <div class="form">
+    <div class="title">
+      Login
+    </div>
+    
+		    <form method="post" action="homepage.html" onsubmit="return validation();">
+		      
+		      <table>
+		      <tr>
+		      <td><input type="radio" id="patient" name="patient" value="Patient">
+			  <label for="patient">Patient</label></td>
+		      
+		      <td>
+			  <input type="radio" id="doctor" name="doctor" value="Doctor" style="margin-left: 30px;">
+			  <label for="doctor">Doctor</label>
+		      </td>
+		      </tr>
+		      </table>
+		      <br>
+		      <div class="input_wrap">
+		        <label for="input_text">Email or Username</label>
+		        <div class="input_field">
+		          <input type="text" class="input" id="input_text" required>
+		        </div>
+		      </div>
+		      <div class="input_wrap">
+		        <label for="input_password">Password</label>
+		        <div class="input_field">
+		          <input type="password" class="input" id="input_password" required>
+		        </div>
+		      </div>
+		      <div class="input_wrap">
+		        <!--<span class="error_msg">Incorrect username or password. Please try again</span>-->
+		        <input type="submit" id="login_btn" class="btn" value="Login" >
+		      </div>
+		    </form>
+			<br>
+			<div id="ne" text-align="center"> New User? Sign Up here</div>
+			<br>
+     	 	<div class="input_wrap1">
+		        <!--<span class="error_msg">Incorrect username or password. Please try again</span>-->
+		        <form action="patientreg">
+		        	<button  id="patient_signin_btn" class="btn btn_su" onclick="">Patient's Sign Up</button>
+		        </form>
+		    </div>
+		    <br>
+		    <div class="input_wrap1">
+		        <!--<span class="error_msg">Incorrect username or password. Please try again</span>-->
+		        <form action="home">
+		        	<button id="doctor_signin_btn" class="btn btn_su">Doctor's Sign Up</button>
+		        </form>
+		    </div>
+  
+  </div>
+</div>

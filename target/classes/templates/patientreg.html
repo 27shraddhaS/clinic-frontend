@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Registration</title>
+<link th:href="@{/css/mainpreg.css}" rel="stylesheet">
+<script type="text/javascript" th:src="@{/js/actions.js}"></script>
+</head>
+
+<body>
+
+<h1 align="center">Patient Registration</h1>
+<br><br>
+<div id="doc" align="center">
+Are you a Doctor?   <a class="btn" href="/home">Register Here</a>
+</div>
+<br><br>
+
+<form action="/homepage.html" method="post" align="center">
+ <fieldset id="field" align="center">
+  <!--<legend align="center">Patient Information:</legend><br><br>-->
+  <br><br>
+  <table align="center">
+	<tr>
+  <td><label for="fname">First name:</label>
+  <td><input type="text" id="fname" name="fname" required>
+  </tr>
+	<tr>
+  <td><label for="lname">Last name:</label>
+  <td><input type="text" id="lname" name="lname">
+  </tr>
+	<tr>
+  <td><label for="email">Email:</label>
+  <td><input type="email" id="email" name="email" required>
+  </tr>
+	<tr>
+  <td><label for="mobile">Phone Number:</label>
+  <td><input type="tel" id="tel" name="tel" required>
+  </tr>
+  <tr>
+  <td><label for="gender">Gender:</label>
+  <td><input type="text" id="gender" name="gender" required>
+  </tr>
+	<tr>
+  <td><label for="age">Age:</label>
+  <td><input type="number" id="age" name="age" required>
+  </tr>
+  <tr>
+  <td><label for="city">City:</label>
+  <td><input type="text" id="city" name="city" required>
+  </tr>
+  <tr>
+  <td><label for="state">State:</label>
+  <td><input type="text" id="state" name="state" required>
+  </tr>
+  <tr>
+  <td><label for="pincode">Pincode:</label>
+  <td><input type="number" id="pincode" name="pincode" required>
+  </tr>
+  <tr>
+  <td><label> </label></td>
+  <td><input type="submit" value="Register" id="registerbtn"></td></tr>
+  </table>
+ </fieldset>
+ 
+</form>
+
+</body>
+</html>

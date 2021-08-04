@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor Registration</title>
+
+<script type="text/javascript"></script>
+<style>
+
+body{
+	
+	background: linear-gradient(to right, cornflowerblue, powderblue,mediumseagreen);
+	font-family: 'Jost', sans-serif;
+	color: #5c4b51;
+}
+
+a{
+	color:crimson;
+}
+.container{
+	
+	width:670px;
+	margin:auto;
+	height:1020px;
+	background-color:#F0F8FF;
+	font-family: 'Jost', sans-serif;
+}
+
+
+label{
+	margin-left:20px;
+}
+h1{
+	text-align:center;
+	margin:auto;
+}
+input[type=text], input[type=password] {
+  width: 87%;
+  padding: 15px;
+  margin: 2px 0 19px 20px;
+  display: inline-block;
+  border: none;
+  background-color: #ddd;
+}
+.active{
+	background-color:#04AA6D;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 22px;
+}
+.registerbtn
+{
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 15px 10px;
+  margin:15px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  height:50px;
+  opacity: 0.9;
+  text-align:center;
+}
+.registerbtn:hover {
+  opacity:1;
+  
+}
+.s1
+{
+	background-color:#F0F8FF;
+	width:670px;
+	margin:auto;
+}
+.signin {
+  
+  text-align: center;
+}
+
+
+</style>
+</head>
+<body>
+
+<br>
+<h1 style="text-align:center;">Doctor Registration</h1>
+<br>
+<h4 style="text-align:center;"><a href="patientreg" style="color:crimson;">Not a doctor?</a></h4>
+<form action="">
+	<div class="container">
+		<br>
+		<label for="fname"><b>First Name</b></label>
+		<br>
+		<input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
+		<br>
+		<label for="lname"><b>Last Name</b></label>
+		<br>
+		<input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
+		<br>
+		<label for="speciality"><b>Specialization</b></label>
+		<br>
+		<input type="text" placeholder="Enter Speciality" name="speciality" id="speciality" required>
+		<br>
+		<label for="phone"><b>Phone No</b></label>
+		<br>
+         <input type="text" placeholder="Enter Phone no." name="phone" id="phone" required>
+		<br>
+		<label for="license"><b>Medical License No.</b></label>
+		<br>
+		<input type="text" placeholder="Enter Medical License no." name="license" id="license" required>
+		<br>
+		<label for="psw"><b>Password</b></label>
+		<br>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+		<br>
+		<label for="psw-repeat"><b>Repeat Password</b></label>
+		<br>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+        <br>
+        
+        <label for="hname"><b>Hospital Name</b></label>
+		<br>
+         <input type="text" placeholder="Enter Hospital Name" name="hname" id="hname" required>
+		<br>
+		
+		<label for="hcontact"><b>Hospital Contact No</b></label>
+		<br>
+         <input type="text" placeholder="Enter Hospital Contact No." name="hcontact" id="hcontact" required>
+		<br>
+		
+		<label for="hcity"><b>City</b></label>
+		<br>
+         <input type="text" placeholder="Enter City" name="hcity" id="hcity" required>
+		<br>
+		
+		<label for="hstate"><b>State</b></label>
+		<br>
+         <input type="text" placeholder="Enter State" name="hstate" id="hstate" required>
+		<br>
+		
+		<label for="hpin"><b>Pincode</b></label>
+		<br>
+         <input type="text" placeholder="Enter Pincode" name="hpin" id="hpin" required>
+		<br>
+		
+        </div>
+       
+        <div class="s1" align="center">
+        <button type="submit" class="registerbtn" th:onclick="demo()">Register</button>
+		</div>
+	<div class="signin">
+	<p>Already have an account?<a href="login">Sign in</ a></p>
+	</div>
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

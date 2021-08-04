@@ -29,11 +29,19 @@ public class HomeController {
 //	public HomeController() {
 //	}
 
+<<<<<<< HEAD
 	@RequestMapping({"/","/home"})//  src/main/webapp/views/home.jsp will be called
 	public String home()
 	{
 		return "mainpage";
 	}
+=======
+//	@RequestMapping({"/","/home"})//  src/main/webapp/views/home.jsp will be called
+//	public String home()
+//	{
+//		return "mainpage";
+//	}
+>>>>>>> 41cd451 (first commit)
 	
 	
 	@GetMapping({"/","/login"})
@@ -51,8 +59,13 @@ public class HomeController {
 	{
 		return "docprofile";
 	}
+<<<<<<< HEAD
 	@GetMapping({"/patprofile"})
 	public String patprofile()
+=======
+	@GetMapping({"/patienthome"})
+	public String patienthome()
+>>>>>>> 41cd451 (first commit)
 	{
 		return "patienthome";
 	}
@@ -61,6 +74,7 @@ public class HomeController {
 	{
 		return "about";
 	}
+<<<<<<< HEAD
 	
 	
 	@RequestMapping("/patient_signup")
@@ -70,6 +84,27 @@ public class HomeController {
 	}
 	
 	
+=======
+	@GetMapping({"/admin"})
+	public String admin()
+	{
+		return "admin";
+	}
+	@RequestMapping({"/doctorreg"})
+	public String doctorreg()
+	{
+		return "doctorreg";
+	}
+		
+//	
+//	@RequestMapping("/patient_signup")
+//	public String user_signup()
+//	{
+//		return "patient_signup";
+//	}
+//	
+//	
+>>>>>>> 41cd451 (first commit)
 	
 	
 	
